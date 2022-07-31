@@ -1,27 +1,23 @@
 import { useCallback, useContext, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-import api from "../../services/axios";
+import { RootState } from "../../store";
 import ToastContext from "../../context/Toast";
 import { Toast } from "../../context/Toast/types";
-import pokemons from "../../assets/json/pokemons.json";
+import { searchPokemon } from "../../store/pokemon/actions";
 import { getAlternatives, randomNumber } from "../../utils/alternatives";
 
-import { Pokemon } from "./types";
+import pokemons from "../../assets/json/pokemons.json";
 
 import "./styles.css";
 
 const Quiz: React.FC = () => {
-  const [data, setData] = useState<Pokemon>();
-  const [loading, setLoading] = useState<boolean>(true);
   const [options, setOptions] = useState<string[]>([]);
 
   const { handleToast } = useContext<Toast>(ToastContext);
 
-  const getPokemon = useCallback(async (id: number) => {
-    const result = await api.get(`/pokemon/${id}`);
-    setData(result.data);
-    setLoading(false);
-  }, []);
+  const dispatch = useDispatch();
+  const { loading, data } = useSelector((state: RootState) => state.pokemon);
 
   const loadOptions = useCallback((alternatives: number[]) => {
     let names: string[] = [];
@@ -31,12 +27,11 @@ const Quiz: React.FC = () => {
   }, []);
 
   const mountQuiz = useCallback(async () => {
-    setLoading(true);
     const alternatives = getAlternatives();
     const number = randomNumber(4);
     loadOptions(alternatives);
-    await getPokemon(alternatives[number] + 1);
-  }, [loadOptions, getPokemon]);
+    dispatch(searchPokemon(alternatives[number] + 1));
+  }, [loadOptions, dispatch]);
 
   useEffect(() => {
     mountQuiz();
@@ -72,6 +67,6 @@ const Quiz: React.FC = () => {
     )
   }
   return <></>
-}
+};
 
 export default Quiz;
