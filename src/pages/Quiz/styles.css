@@ -1,0 +1,51 @@
+.quiz-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz-title {
+  font-family: 'Pokemon-Solid';
+  font-size: 5rem;
+  color: rgba(255, 204, 1, 255);
+  margin: 0;
+  -webkit-text-stroke: 2px rgba(56, 91, 168, 255);
+}
+
+.quiz-img {
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+  border: 1px solid gray;
+}
+
+.quiz-alternatives {
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.quiz-alternative-column {
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px;
+  width: 100%;
+}
+
+.quiz-btn {
+  margin: 10px 0px;
+  padding: 15px 0px;
+  border: 2px;
+  background-color: rgba(56, 91, 168, 255);
+  color: white;
+  cursor: pointer;
+  font-family: 'Roboto';
+  text-transform: uppercase;
+}
+
+.quiz-btn:hover {
+  background-color: #11448D;
+}

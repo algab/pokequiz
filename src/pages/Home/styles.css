@@ -1,0 +1,27 @@
+.home-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-title {
+  font-family: 'Pokemon-Solid';
+  font-size: 6rem;
+  color: rgba(255, 204, 1, 255);
+  margin: 0;
+  -webkit-text-stroke: 2px rgba(56, 91, 168, 255);
+}
+
+.home-button {
+  cursor: pointer;
+  width: 300px;
+  font-family: 'Roboto';
+  color: rgba(56, 91, 168, 255);
+  background-color: transparent;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 15px 0px;
+  border: 2px solid rgba(56, 91, 168, 255);
+}

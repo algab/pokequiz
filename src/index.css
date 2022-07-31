@@ -1,0 +1,13 @@
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #E5E4E2;
+}
+
+@font-face {
+  font-family: "Pokemon-Solid";
+  src: url("./assets/fonts/Pokemon-Solid.ttf");
+}
