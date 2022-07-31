@@ -11,7 +11,7 @@
   font-size: 5rem;
   color: rgba(255, 204, 1, 255);
   margin: 0;
-  -webkit-text-stroke: 2px rgba(56, 91, 168, 255);
+  -webkit-text-stroke: 2px #385BA8;
 }
 
 .quiz-img {
@@ -39,7 +39,7 @@
   margin: 10px 0px;
   padding: 15px 0px;
   border: 2px;
-  background-color: rgba(56, 91, 168, 255);
+  background-color: #385BA8;
   color: white;
   cursor: pointer;
   font-family: 'Roboto';

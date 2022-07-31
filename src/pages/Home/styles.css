@@ -11,17 +11,22 @@
   font-size: 6rem;
   color: rgba(255, 204, 1, 255);
   margin: 0;
-  -webkit-text-stroke: 2px rgba(56, 91, 168, 255);
+  -webkit-text-stroke: 2px #385BA8;
 }
 
 .home-button {
   cursor: pointer;
   width: 300px;
   font-family: 'Roboto';
-  color: rgba(56, 91, 168, 255);
+  color: #385BA8;
   background-color: transparent;
   text-transform: uppercase;
   font-weight: 500;
   padding: 15px 0px;
-  border: 2px solid rgba(56, 91, 168, 255);
+  border: 2px solid #385BA8;
+}
+
+.home-button:hover {
+  color: #11448D;
+  border: 2px solid #11448D;
 }
