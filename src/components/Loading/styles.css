@@ -1,0 +1,17 @@
+.loading-img {
+  height: 80px;
+  width: 80px;
+}
+
+.loading-rotate {
+  animation: rotation 5s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
