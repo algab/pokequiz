@@ -7,9 +7,11 @@ import api from "../../services/axios";
 
 export function* getPokemon(action: any) {
   try {
-    const result: AxiosResponse = yield call(() => api.get(`/pokemon/${action.payload}`));
-    yield put(addPokemon(result.data));
-  } catch (error) { 
+    const result: AxiosResponse = yield call(() =>
+      api.get(`/pokemon/${action.payload}`)
+    );
+    yield put(addPokemon({ id: action.payload, pokemon: result.data }));
+  } catch (error) {
     yield put(failedPokemon);
   }
 }

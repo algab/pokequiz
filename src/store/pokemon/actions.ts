@@ -1,7 +1,8 @@
 import { createAction } from "@reduxjs/toolkit";
 
-import { Pokemon } from "./types";
+import { ActionAddPokemon } from "./types";
 
-export const addPokemon = createAction<Pokemon>('pokemon/addPokemon');
+export const addPokemon = createAction<ActionAddPokemon>('pokemon/addPokemon');
 export const failedPokemon = createAction('pokemon/failedPokemon');
+export const loadingPokemon = createAction('pokemon/loadingPokemon');
 export const searchPokemon = createAction<number>('pokemon/searchPokemon');

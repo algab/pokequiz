@@ -8,9 +8,10 @@ const sageMiddleware = createSagaMiddleware();
 
 export const store = configureStore({
   reducer: {
-    pokemon: reducerPokemon
+    pokemon: reducerPokemon,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware({ thunk: false }).concat([sageMiddleware])
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({ thunk: false }).concat([sageMiddleware]),
 });
 
 sageMiddleware.run(saga);

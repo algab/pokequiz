@@ -7,6 +7,11 @@ export type Pokemon = {
   sprites: Sprites;
 };
 
+export type ActionAddPokemon = {
+  id: number,
+  pokemon: Pokemon,
+}
+
 export type StatePokemon = {
   loading: boolean,
   error: boolean,

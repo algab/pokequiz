@@ -1,6 +1,6 @@
 import { createReducer } from "@reduxjs/toolkit";
 
-import { addPokemon, failedPokemon, searchPokemon } from "./actions";
+import { addPokemon, failedPokemon, loadingPokemon } from "./actions";
 
 import { Pokemon, StatePokemon } from "./types";
 
@@ -16,7 +16,8 @@ export const reducerPokemon = createReducer(initialState, (builder) => {
     return {
       ...state,
       loading: false,
-      data: action.payload
+      id: action.payload.id,
+      data: action.payload.pokemon
     }
   })
   .addCase(failedPokemon, (state) => {  
@@ -26,11 +27,10 @@ export const reducerPokemon = createReducer(initialState, (builder) => {
       loading: false,
     }
   })
-  .addCase(searchPokemon, (state, action) => {   
+  .addCase(loadingPokemon, (state, action) => {   
     return {
       ...state,
-      loading: true,
-      id: action.payload
+      loading: true
     }
   })
 });
