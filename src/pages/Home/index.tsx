@@ -6,7 +6,7 @@ const Home: React.FC = () => {
   const navigate = useNavigate();
 
   const startQuiz = () => {
-    navigate("/quiz");
+    navigate("quiz");
   };
 
   return (

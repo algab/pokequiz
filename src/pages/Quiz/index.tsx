@@ -1,40 +1,25 @@
-import { useCallback, useContext, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { RootState } from "../../store";
-import Loading from "../../components/Loading";
 import ToastContext from "../../context/Toast";
 import { Toast } from "../../context/Toast/types";
+import Error from "../../components/Error";
+import Loading from "../../components/Loading";
 import { loadingPokemon, searchPokemon } from "../../store/pokemon/actions";
-import { getAlternatives, randomNumber } from "../../utils/alternatives";
-
-import pokemons from "../../assets/json/pokemons.json";
 
 import "./styles.css";
-import Error from "../../components/Error";
 
 const Quiz: React.FC = () => {
-  const [options, setOptions] = useState<string[]>([]);
-
   const { handleToast } = useContext<Toast>(ToastContext);
 
   const dispatch = useDispatch();
-  const { loading, data } = useSelector((state: RootState) => state.pokemon);
-
-  const loadOptions = useCallback((alternatives: number[]) => {
-    let names: string[] = [];
-    alternatives.forEach((item) => names.push(pokemons[item]));
-    names = names.sort(() => Math.random() - 0.5);
-    setOptions(names);
-  }, []);
+  const { loading, data, error, options } = useSelector((state: RootState) => state.pokemon);
 
   const mountQuiz = useCallback(async () => {
     dispatch(loadingPokemon());
-    const alternatives = getAlternatives();
-    const number = randomNumber(4);
-    loadOptions(alternatives);
-    dispatch(searchPokemon(alternatives[number] + 1));
-  }, [loadOptions, dispatch]);
+    dispatch(searchPokemon());
+  }, [dispatch]);
 
   useEffect(() => {
     mountQuiz();
@@ -51,7 +36,7 @@ const Quiz: React.FC = () => {
 
   return (
     <div className="quiz-container">
-      {/* {!loading ? (
+      {!loading && !error && (
         <>
           <p className="quiz-title">Quem é esse Pokémon ?</p>
           <div>
@@ -80,10 +65,9 @@ const Quiz: React.FC = () => {
             </div>
           </div>
         </>
-      ) : (
-        <Loading />
-      )} */}
-      <Error />
+      )}
+      {loading && !error && <Loading />}
+      {!loading && error && <Error />}
     </div>
   );
 };

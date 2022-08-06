@@ -9,12 +9,14 @@ export type Pokemon = {
 
 export type ActionAddPokemon = {
   id: number,
+  options: string[],
   pokemon: Pokemon,
 }
 
 export type StatePokemon = {
   loading: boolean,
   error: boolean,
-  id: number | undefined,
+  id: number,
+  options: string[],
   data: Pokemon
 };

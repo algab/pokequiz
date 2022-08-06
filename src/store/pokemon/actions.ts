@@ -5,4 +5,4 @@ import { ActionAddPokemon } from "./types";
 export const addPokemon = createAction<ActionAddPokemon>('pokemon/addPokemon');
 export const failedPokemon = createAction('pokemon/failedPokemon');
 export const loadingPokemon = createAction('pokemon/loadingPokemon');
-export const searchPokemon = createAction<number>('pokemon/searchPokemon');
+export const searchPokemon = createAction('pokemon/searchPokemon');

@@ -7,7 +7,8 @@ import { Pokemon, StatePokemon } from "./types";
 const initialState: StatePokemon = {
   loading: true,
   error: false,
-  id: undefined,
+  id: 0,
+  options: [],
   data: {} as Pokemon
 };
 
@@ -17,6 +18,7 @@ export const reducerPokemon = createReducer(initialState, (builder) => {
       ...state,
       loading: false,
       id: action.payload.id,
+      options: action.payload.options,
       data: action.payload.pokemon
     }
   })
@@ -27,9 +29,10 @@ export const reducerPokemon = createReducer(initialState, (builder) => {
       loading: false,
     }
   })
-  .addCase(loadingPokemon, (state, action) => {   
+  .addCase(loadingPokemon, (state) => {   
     return {
       ...state,
+      error: false,
       loading: true
     }
   })
