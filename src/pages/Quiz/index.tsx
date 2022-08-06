@@ -11,6 +11,7 @@ import { getAlternatives, randomNumber } from "../../utils/alternatives";
 import pokemons from "../../assets/json/pokemons.json";
 
 import "./styles.css";
+import Error from "../../components/Error";
 
 const Quiz: React.FC = () => {
   const [options, setOptions] = useState<string[]>([]);
@@ -50,7 +51,7 @@ const Quiz: React.FC = () => {
 
   return (
     <div className="quiz-container">
-      {!loading ? (
+      {/* {!loading ? (
         <>
           <p className="quiz-title">Quem é esse Pokémon ?</p>
           <div>
@@ -81,7 +82,8 @@ const Quiz: React.FC = () => {
         </>
       ) : (
         <Loading />
-      )}
+      )} */}
+      <Error />
     </div>
   );
 };

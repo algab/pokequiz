@@ -1,0 +1,30 @@
+.error-img {
+  height: 140px;
+  width: 140px;
+}
+
+.error-title {
+  font-family: 'Roboto';
+  margin: 20px 0px 0px 0px
+}
+
+.error-description {
+  font-family: 'Roboto';
+}
+
+.error-button {
+  cursor: pointer;
+  width: 300px;
+  font-family: 'Roboto';
+  color: #385BA8;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 15px 0px;
+  border: 2px solid #385BA8;
+}
+
+.error-button:hover {
+  color: #11448D;
+  border: 2px solid #11448D;
+}
