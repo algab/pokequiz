@@ -10,6 +10,7 @@
 
 .error-description {
   font-family: 'Roboto';
+  font-weight: bold;
 }
 
 .error-button {
