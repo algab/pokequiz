@@ -17,8 +17,8 @@
   cursor: pointer;
   width: 300px;
   font-family: 'Roboto';
-  color: #385BA8;
-  background-color: transparent;
+  color: white;
+  background-color: #385BA8;
   text-transform: uppercase;
   font-weight: 500;
   padding: 15px 0px;
@@ -26,6 +26,6 @@
 }
 
 .error-button:hover {
-  color: #11448D;
   border: 2px solid #11448D;
+  background-color: #11448D;
 }

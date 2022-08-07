@@ -13,7 +13,7 @@ export const ToastProvider: React.FC<Props> = ({ children }) => {
   return (
     <ToastContext.Provider value={{ handleToast }}>
       {children}
-      <ToastContainer theme="colored" autoClose={3000} />
+      <ToastContainer theme="colored" autoClose={2000} />
     </ToastContext.Provider>
   )
 };
